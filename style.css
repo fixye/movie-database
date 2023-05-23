@@ -57,11 +57,13 @@ header::before {
 h1 {
   font-size: 42px;
   text-shadow: 0 0 2px  black;
+  cursor: pointer;
 }
 
 h3 {
   font-size: 14px;
   text-shadow: 0 0 3px  black;
+  cursor: pointer;
 }
 
 main {
@@ -201,4 +203,16 @@ small {
   font-size: 20px;
   font-weight: 700;
   width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: black;
 }

@@ -40,9 +40,10 @@ header {
   height: 208px;
   color: var(--header-text);
   position: relative;
+  background-color: #303030;
 }
 
-header::before {
+/* header::before {
   content: "";
   position: absolute;
   top: 0;
@@ -52,7 +53,7 @@ header::before {
   background-image: url('small.jpg');
   filter: brightness(40%);
   z-index: -1;
-}
+} */
 
 h1 {
   font-size: 42px;

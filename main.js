@@ -14,7 +14,7 @@ let arrayOfFoundMovies = [];
 
 
 
-function addToWatchlist(index) {
+const addToWatchlist = (index) => {
     watchlist.push(arrayOfFoundMovies[index])
     localStorage.setItem('watchlist', JSON.stringify(watchlist))
 }
@@ -102,8 +102,11 @@ async function renderFoundMovies() {
                 }
             }
     } else {
-        // TODO: "No data found for the query" mark-up
-        
+        movieSection.innerHTML =  `
+        <div class="default-state">
+            <p>No data found for your query. Please try again.</p>
+        </div>
+        `
     }
 }
 
@@ -120,7 +123,6 @@ function renderWatchlist() {
     if(watchlist.length) {
         watchlist = JSON.parse(localStorage.getItem('watchlist'))
         watchlist.forEach(element => {
-            console.log(element)
             html += 
             `<article class="movie">
             <img src="${element.Poster}" alt="${element.Title} Poster">
@@ -162,6 +164,5 @@ function renderWatchlist() {
 function deleteItemFromWatchlist(index) {
     watchlist.splice(index, 1)
     localStorage.setItem('watchlist', JSON.stringify(watchlist))
-    console.log(watchlist)
     renderWatchlist()
 }
